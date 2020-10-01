@@ -14,28 +14,28 @@ pipeline {
         stage('Build') {
             steps {
                 echo '*********** Building the checkout project' ;
-                sh 'Build.sh'
+                bat 'Build.bat'
                 }
         }
 
         stage('Unit-Test') {
             steps {
                 echo '*********** Running JUnit Tests' ;
-                sh 'Unit.sh'
+                bat 'Unit.bat'
                 }
         }
 
         stage('Quality-Gate') {
             steps {
                 echo '*********** Verifying quality gates' ;
-                sh 'Quality.sh'
+                bat 'Quality.bat'
                 }
         }
 
         stage('Deploy') {
             steps {
                 echo '*********** Deploying to stage environment for more tests' ;
-                sh 'Deploy.sh'
+                bat 'Deploy.bat'
                 }
         }
 
